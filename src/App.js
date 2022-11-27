@@ -2,7 +2,7 @@ import "./App.css"
 import { useEffect, useState } from "react";
 import { useWindowDimensions, adjustContainer } from "./useWindowDimensions";
 import WebAnalysisItems from "./components/WebAnalysisItems";
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Container } from "react-bootstrap";
 import SideTaskBar from "./components/SideTaskBar";
 import TopTaskBar from "./components/TopTaskBar";
 
@@ -28,16 +28,18 @@ function App() {
         <div className="middle">
             <div className="websiteContainer">
               
-              <TopTaskBar />
-              <Row>
-                <Col sm={3} className="position-fixed flex-fill" id="sidebarCol">
-                  <SideTaskBar />
-                </Col>
-                <Col sm={9} className="content">
-                  <WebAnalysisItems />
-                </Col>
-              </Row>
-
+                <TopTaskBar />
+                <Row>
+                  <Col sm={3} className="position-fixed flex-fill" id="sidebarCol">
+                    <SideTaskBar />
+                  </Col>
+                  <Col sm={9} className="content">
+                    <Container>
+                      <WebAnalysisItems />
+                    </Container>
+                  </Col>
+                </Row>
+              
             </div>
         </div>
       </div>

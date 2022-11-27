@@ -5,6 +5,7 @@ function WebAnalysisItems() {
 
     return (
         <div>
+            <h1 style={{color: "white"}}>Lorem Ipsum - Delete this line and write your code here</h1>
         </div>
     );
 }

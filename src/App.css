@@ -16,7 +16,6 @@ body {
     width: 2250px;
 }
 
-
 .outer {
     display: table;
     position: absolute;
@@ -30,3 +29,20 @@ body {
     display: table-cell;
     vertical-align: middle;
 }
+
+.content {
+    margin-left: 22%;
+    position: absolute;
+    margin-left: 292px;
+    margin-top: 150px;
+  
+    width: 1963px;
+    
+    position: inherit;
+}
+
+#sidebarCol {
+    height: 100%;
+    z-index: 999;
+    width: 300px;
+  }

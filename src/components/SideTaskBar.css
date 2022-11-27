@@ -6,6 +6,7 @@
     height: 1250px;
     background: linear-gradient(180deg, #3D334E 0%, #2163A8 62.89%);
     border-radius: 32px 0px 0px 32px;
+    margin-top: -150px;
     position: fixed;
     /* user-select: none; */
 }
