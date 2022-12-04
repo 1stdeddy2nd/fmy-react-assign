@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css"
 import { useEffect, useState } from "react";
 import { useWindowDimensions, adjustContainer } from "./useWindowDimensions";
@@ -34,9 +35,7 @@ function App() {
                     <SideTaskBar />
                   </Col>
                   <Col sm={9} className="content">
-                    <Container>
                       <WebAnalysisItems />
-                    </Container>
                   </Col>
                 </Row>
               
