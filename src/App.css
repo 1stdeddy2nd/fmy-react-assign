@@ -24,7 +24,7 @@ body {
     height: 100%;
     width: 100%;
 }
-  
+
 .middle {
     display: table-cell;
     vertical-align: middle;
@@ -35,9 +35,9 @@ body {
     position: absolute;
     margin-left: 292px;
     margin-top: 150px;
-  
+
     width: 1963px;
-    
+
     position: inherit;
 }
 

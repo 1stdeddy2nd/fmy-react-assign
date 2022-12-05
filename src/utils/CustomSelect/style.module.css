@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 12px;
+    gap: 10px;
+
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%);
+    border: 0.5px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 23px;
+
+    height: 45px;
+    width: 100%;
+}
+
+.label {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    text-align: center;
+    letter-spacing: -0.2px;
+
+    color: #D4D7DA;
+}
+
+.select {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    text-align: center;
+    letter-spacing: -0.2px;
+
+    color: #FFFFFF;
+    background-color: transparent;
+    border: 0;
+
+    -webkit-appearance: none; /* webkit browsers */
+    -moz-appearance: none; /* firefox */
+    appearance: none; /* modern browsers */
+    width: 100%;
+}
+
+.select:focus {
+    outline:none;
+}

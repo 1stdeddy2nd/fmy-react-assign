@@ -1,0 +1,82 @@
+.container {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 100%);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+}
+
+.headerLeft {
+    height: 66px;
+    width: 1008px;
+    display: flex;
+}
+
+.headerRight {
+    height: 66px;
+    width: 882px;
+}
+
+.title {
+    font-family: 'Helvetica', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 24px;
+    color: white;
+    margin: 25px 0 17px 30px;
+}
+
+.content1 {
+    padding-left: 32px;
+    width: 262px;
+}
+
+.subTitle {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+    opacity: 0.7;
+}
+
+.totalItem {
+    font-size: 40px;
+    font-weight: 400;
+    color: #75B3FF;
+    margin-bottom: 26px;
+}
+
+.changesPercentage {
+    font-weight: 300;
+    font-size: 34px;
+    color: #0FDF63;
+    margin-bottom: 32px;
+}
+
+.totalInDB {
+    font-weight: 300;
+    font-size: 34px;
+    color: #FFFFFF;
+    margin-bottom: 44px;
+}
+
+.whiteLine {
+    height: 1px;
+    opacity: 0.1;
+    background-color: #95A6B8;
+}
+
+.content2 {
+    width: 745px;
+    border-right: 2px solid rgba(149, 166, 184, 0.4);
+}
+
+.content3 {
+    padding-left: 50px;
+    width: 280px;
+}
+
+.caseCount{
+    font-weight: 300;
+    font-size: 34px;
+    color: #FFFFFF;
+}
