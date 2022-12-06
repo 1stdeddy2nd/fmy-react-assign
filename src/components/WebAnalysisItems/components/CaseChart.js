@@ -1,6 +1,7 @@
 import {Chart as ChartJS, ArcElement, Tooltip, Legend} from 'chart.js';
 import {Chart} from 'react-chartjs-2';
-import {useEffect, useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react"
+import {faker} from '@faker-js/faker';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -30,18 +31,30 @@ export default function CaseChart() {
         }
     }, [chartRef])
 
+    const labels = ['Lorem ipsum', 'Lorem ipsum', 'Lorem ipsum', 'Lorem ipsum', 'Lorem ipsum', 'Other']
+
     return(
         <div className="w-100 position-relative" style={{height: 480}}>
             <div style={{position: 'absolute', top: 215, left: 115, fontSize: '36px', color: 'white'}}>86%</div>
             <Chart
                 ref={chartRef}
                 type="doughnut"
+                plugins={[{
+                    beforeEvent(chart, ctx) {
+                        const event = ctx.event;
+                        const zoom = document.getElementsByClassName('websiteContainer')[0].style.zoom || 1;
+                        if (zoom !== 1) {
+                            event.x = event.x / zoom;
+                            event.y = event.y / zoom;
+                        }
+                    }
+                }]}
                 data={{
-                    labels: ['Lorem ipsum', 'Lorem ipsum', 'Lorem ipsum', 'Lorem ipsum', 'Lorem ipsum', 'Other'],
+                    labels,
                     datasets: [
                         {
                             label: 'Cases',
-                            data: [24, 21, 15, 10, 16, 14],
+                            data: labels.map(() => faker.datatype.number({min: 10, max: 20})),
                             backgroundColor: bgColors,
                             borderWidth: 0.5,
                         },
@@ -65,7 +78,7 @@ export default function CaseChart() {
                                 color: 'white',
                                 padding: 30
                             }
-                        }
+                        },
                     }
                 }}
             />

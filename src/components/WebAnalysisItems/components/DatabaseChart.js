@@ -1,3 +1,4 @@
+import {Line} from 'react-chartjs-2';
 import {
     Chart as ChartJS,
     CategoryScale,
@@ -9,8 +10,8 @@ import {
     Filler,
     Legend,
 } from 'chart.js';
-import {Chart} from 'react-chartjs-2';
-import {useEffect, useState} from "react";
+import {useState, useEffect} from "react";
+import {faker} from '@faker-js/faker';
 
 ChartJS.register(
     CategoryScale,
@@ -20,7 +21,7 @@ ChartJS.register(
     Title,
     Tooltip,
     Filler,
-    Legend
+    Legend,
 );
 
 export default function DatabaseChart() {
@@ -34,26 +35,24 @@ export default function DatabaseChart() {
         setGradientColor(gradient);
     }, [])
 
+    const labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fir', 'Sat', 'Today']
+
     return (
         <div className="d-flex align-items-center h-100 mx-4">
-            <Chart
+            <Line
                 id="canvas"
-                type={"line"}
-                data={{
-                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fir', 'Sat', 'Today'],
-                    datasets: [
-                        {
-                            fill: true,
-                            data: [2000,2050,3500,3000,2900,2500,3500],
-                            borderColor: '#6AB4FF',
-                            backgroundColor: gradientColor,
-                            pointRadius: 7,
-                            pointBackgroundColor: 'white'
-                        },
-                    ],
-                }}
+                type="line"
+                plugins={[{
+                    beforeEvent(chart, ctx) {
+                        const event = ctx.event;
+                        const zoom = document.getElementsByClassName('websiteContainer')[0].style.zoom || 1;
+                        if (zoom !== 1) {
+                            event.x = event.x / zoom;
+                            event.y = event.y / zoom;
+                        }
+                    }
+                }]}
                 options={{
-                    responsive: true,
                     plugins: {
                         legend: {
                             display: false
@@ -76,7 +75,20 @@ export default function DatabaseChart() {
                                 color: 'rgba(255,255,255,0.2)'
                             }
                         }
-                    },
+                    }
+                }}
+                data={{
+                    labels,
+                    datasets: [{
+                        fill: true,
+                        data: labels.map(() => faker.datatype.number({min: 2000, max: 4000})),
+                        backgroundColor: gradientColor,
+                        pointRadius: 6,
+                        pointBackgroundColor: 'white',
+                        pointBorderColor: '#77B3FF',
+                        pointBorder: 2,
+                        borderColor: '#6AB4FF'
+                    }],
                 }}
             />
         </div>
